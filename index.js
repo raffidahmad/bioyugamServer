@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
     }).then(response => {
         return response.text();
     }).then(data => {
-        res.json("test success");
+        res.json(data);
     }).catch(err => {
         res.json(err);
     });
