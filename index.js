@@ -42,9 +42,11 @@ app.get('/', (req, res) => {
             const subKeys = Object.keys(result[keys[0]]);
             const channel = result[keys[0]][subKeys[1]];
             const items = channel[0].item;
+            return items;
             //console.log(items);
-            res(items);
+           // res(items);
         });
+        res.json(parsedData);
         
         // parseString(xmlData, function (err, result) {
         //     const keys = Object.keys(result);
