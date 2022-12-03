@@ -40,7 +40,7 @@ app.get('/jobs', (req, res) => {
             const subKeys = Object.keys(result[keys[0]]);
             const channel = result[keys[0]][subKeys[1]];
             const items = channel[0].item;
-            res.json(items);
+            console.log(items);
         });
     })
 });
