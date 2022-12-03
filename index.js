@@ -33,17 +33,7 @@ app.get('/', (req, res) => {
             'Content-Type': 'text/xml'
         }
     }).then(response => {
-        return response.text();
-    }).then(responseText => {
-        var xmlData = responseText;
-        parseString(xmlData, function (err, result) {
-            const keys = Object.keys(result);
-            const subKeys = Object.keys(result[keys[0]]);
-            const channel = result[keys[0]][subKeys[1]];
-            const items = channel[0].item;
-            console.log(items);
-            res.json(items);
-        });
+        res.json(response.text());
     }).catch(err => {
         res.json(err);
     });
