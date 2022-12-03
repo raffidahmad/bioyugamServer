@@ -13,7 +13,10 @@ var allowedOrigins = ['http://localhost:3000',
             } return callback(null, true);
         }
     }));
-app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/', (req, res) => {
+    //send as json
+    res.json({ message: 'Hello World!' });
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
