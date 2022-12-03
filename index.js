@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
         return response.text();
     }).then(responseText => {
         var xmlData = responseText;
-        res.json(xmlData);
+        res.json({ message: xmlData });
         // parseString(xmlData, function (err, result) {
         //     const keys = Object.keys(result);
         //     const subKeys = Object.keys(result[keys[0]]);
