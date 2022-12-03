@@ -32,7 +32,7 @@ app.get('/jobs', (req, res) => {
             'Content-Type': 'text/xml'
         }
     }).then(response => {
-        return response.text();
+        //return response.text();
     }).then(responseText => {
         var xmlData = responseText;
         parseString(xmlData, function (err, result) {
