@@ -3,8 +3,7 @@ var cors = require('cors');
 var parseString = require('xml2js').parseString;
 const app = express();
 const port = 3000;
-var allowedOrigins = ['http://localhost:3000',
-    'https://bioyugam.vercel.app/']; app.use(cors({
+var allowedOrigins = ['http://localhost:3000','https://bioyugam.vercel.app/','http://bioyugam.vercel.app/']; app.use(cors({
         origin: function (origin, callback) {    // allow requests with no origin 
             // (like mobile apps or curl requests)
             if (!origin) return callback(null, true); if (allowedOrigins.indexOf(origin) === -1) {
@@ -28,7 +27,7 @@ app.get('/', (req, res) => {
     fetch(`http://api.juju.com/jobs?
 partnerid=a22e764782e9cf803d160f9417cce8fd&k&
 c=biotech-pharmaceutical+health-care+hospitality+human-resources+nursing&
-l=BA8&
+l=Chicago%2C+IL&
 useragent=Mozilla%2F5.0+(Macintosh%3B+U%3B+Intel+Mac+OS+X+10.6%3B+en-US%3B+rv%3A1.9.1.7)+Gecko%2F20091221+Firefox%2F3.5.7&
 ipaddress=98.193.69.227`, {
         method: 'GET',
