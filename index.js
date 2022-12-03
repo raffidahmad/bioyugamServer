@@ -1,6 +1,6 @@
 const express = require('express');
 var cors = require('cors');
-var parseString = require('xml2js');
+var parseString = require('xml2js').parseString;
 const app = express();
 const port = 3000;
 var allowedOrigins = ['http://localhost:3000',
@@ -36,9 +36,7 @@ app.get('/', (req, res) => {
         return response.text();
     }).then(responseText => {
         var xmlData = responseText;
-        parseString(xmlData, function (err, result) {
-            res.json("r")
-          });
+        res.json(xmlData);
         // parseString(xmlData, function (err, result) {
         //     const keys = Object.keys(result);
         //     const subKeys = Object.keys(result[keys[0]]);
