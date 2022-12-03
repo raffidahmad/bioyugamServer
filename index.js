@@ -16,12 +16,12 @@ var allowedOrigins = ['http://localhost:3000',
     }));
 
 
-app.get('/', (req, res) => {
-    //send as json
-    res.json({ message: 'Hello World!' });
-});
+// app.get('/', (req, res) => {
+//     //send as json
+//     res.json({ message: 'Hello World!' });
+// });
 
-app.get('/jobs', (req, res) => {
+app.get('/', (req, res) => {
     fetch(`http://api.juju.com/jobs?partnerid=a22e764782e9cf803d160f9417cce8fd&
     k&c=biotech-pharmaceutical+health-care+hospitality+human-resources+nursing&
     l=Chicago%2C+IL&
@@ -40,7 +40,7 @@ app.get('/jobs', (req, res) => {
             const subKeys = Object.keys(result[keys[0]]);
             const channel = result[keys[0]][subKeys[1]];
             const items = channel[0].item;
-            console.log(items);
+            res.json(items);
         });
     })
 });
