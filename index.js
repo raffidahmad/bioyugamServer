@@ -15,22 +15,13 @@ var allowedOrigins = ['http://localhost:3000',
         }
     }));
 
-
-// app.get('/', (req, res) => {
-//     //send as json
-//     res.json({ message: 'Hello World!' });
-// });
-
-
-
 app.get('/', (req, res) => {
-    let returnedData = [];
     fetch(`http://api.juju.com/jobs?
-        partnerid=a22e764782e9cf803d160f9417cce8fd&k&
-        c=biotech-pharmaceutical+health-care+hospitality+human-resources+nursing&
-        l=Chicago%2C+IL&
-        useragent=Mozilla%2F5.0+(Macintosh%3B+U%3B+Intel+Mac+OS+X+10.6%3B+en-US%3B+rv%3A1.9.1.7)+Gecko%2F20091221+Firefox%2F3.5.7&
-        ipaddress=98.193.69.227`, {
+    partnerid=a22e764782e9cf803d160f9417cce8fd&k&
+    c=biotech-pharmaceutical+health-care+hospitality+human-resources+nursing&
+    l=Chicago%2C+IL&
+    useragent=Mozilla%2F5.0+(Macintosh%3B+U%3B+Intel+Mac+OS+X+10.6%3B+en-US%3B+rv%3A1.9.1.7)+Gecko%2F20091221+Firefox%2F3.5.7&
+    ipaddress=98.193.69.227`, {
         method: 'GET',
         headers: {
             'Content-Type': 'text/xml'
