@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
             'Content-Type': 'text/xml'
         }
     }).then(response => {
-        res.json(response.text());
+        res.json(response);
     }).catch(err => {
         res.json(err);
     });
