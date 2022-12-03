@@ -36,14 +36,14 @@ app.get('/', (req, res) => {
         return response.text();
     }).then(data => {
         var xmlData = data;
-        parseString(xmlData, function (err, result) {
+        const parsedData = parseString(xmlData, function (err, result) {
             const keys = Object.keys(result);
             const subKeys = Object.keys(result[keys[0]]);
             const channel = result[keys[0]][subKeys[1]];
             const items = channel[0].item;
-            res.json(items);
+            return items;
         });
-        //res.json(data);
+        res.json(parsedData);
     }).catch(err => {
         res.json(err);
     });
