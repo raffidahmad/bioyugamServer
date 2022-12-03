@@ -1,6 +1,6 @@
 const express = require('express');
 var cors = require('cors');
-var parseString = require('xml2js').parseString;
+var parseString = require('xml2js');
 const app = express();
 const port = 3000;
 var allowedOrigins = ['http://localhost:3000',
